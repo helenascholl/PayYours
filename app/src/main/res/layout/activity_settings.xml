@@ -33,11 +33,65 @@
         app:layout_constraintStart_toStartOf="@+id/tv_price"
         app:layout_constraintTop_toBottomOf="@+id/tv_places" />
 
+    <EditText
+        android:id="@+id/edit_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/basic_margin"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_price"
+        app:layout_constraintStart_toEndOf="@+id/barrier2"
+        tools:text="0" />
+
+    <EditText
+        android:id="@+id/edit_players"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/basic_margin"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_players"
+        app:layout_constraintStart_toEndOf="@+id/barrier2"
+        tools:text="0" />
+
+    <EditText
+        android:id="@+id/edit_places"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/basic_margin"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_places"
+        app:layout_constraintStart_toEndOf="@+id/barrier2"
+        tools:text="0" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/basic_margin"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="@+id/edit_players"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/edit_players" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="129dp" />
+        app:layout_constraintGuide_begin="35dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="tv_players,tv_price,tv_places"
+        tools:layout_editor_absoluteX="411dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
