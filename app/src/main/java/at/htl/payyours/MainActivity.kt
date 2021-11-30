@@ -13,25 +13,25 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main,menu)
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
+        var result = when(item?.itemId){
             R.id.menu_item_quit -> {
                 finish()
                 true
             }
-
             R.id.menu_item_setting -> {
                 Log.d("MainActivity", "Settings menu called")
-                startActivity(Intent(this, SettingsActivity::class.java))
+                startActivity(Intent(this,SettingsActivity::class.java))
                 true
             }
-
             else -> super.onOptionsItemSelected(item)
         }
+        return result
     }
+
 }

@@ -7,12 +7,133 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tv_place_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="@dimen/basic_margin"
+        android:text="Plätze:"
+        app:layout_constraintStart_toEndOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_player_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/basic_margin"
+        android:text="Spieler:"
+        app:layout_constraintStart_toEndOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/tv_place_main" />
+
+    <TextView
+        android:id="@+id/tv_amount_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/basic_margin"
+        android:text="Betrag:"
+        app:layout_constraintStart_toEndOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/tv_player_main" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="57dp" />
+
+    <EditText
+        android:id="@+id/edit_places_main"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/basic_margin"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:text="0"
+        android:textAlignment="center"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_place_main"
+        app:layout_constraintStart_toEndOf="@+id/barrier1" />
+
+    <EditText
+        android:id="@+id/edit_player_main"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/basic_margin"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:text="0"
+        android:textAlignment="center"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_player_main"
+        app:layout_constraintStart_toEndOf="@+id/barrier1" />
+
+    <Button
+        android:id="@+id/btn_player_plus"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/basic_margin"
+        android:text="+"
+        app:layout_constraintBaseline_toBaselineOf="@+id/edit_player_main"
+        app:layout_constraintStart_toEndOf="@+id/barrier2" />
+
+    <Button
+        android:id="@+id/btn_place_plus"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/basic_margin"
+        android:text="+"
+        app:layout_constraintBaseline_toBaselineOf="@+id/edit_places_main"
+        app:layout_constraintStart_toEndOf="@+id/barrier2" />
+
+    <Button
+        android:id="@+id/btn_minus_place"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/basic_margin"
+        android:text="-"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_place_plus"
+        app:layout_constraintStart_toEndOf="@+id/barrier3" />
+
+    <Button
+        android:id="@+id/btn_minus_player"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/basic_margin"
+        android:text="-"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_player_plus"
+        app:layout_constraintStart_toEndOf="@+id/barrier3" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/basic_margin"
+        android:text="0.000"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_amount_main"
+        app:layout_constraintStart_toEndOf="@+id/barrier2" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="btn_place_plus,btn_player_plus"
+        tools:layout_editor_absoluteX="411dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="edit_player_main,edit_places_main"
+        tools:layout_editor_absoluteX="411dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="tv_amount_main,tv_player_main,tv_place_main"
+        tools:layout_editor_absoluteX="411dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
