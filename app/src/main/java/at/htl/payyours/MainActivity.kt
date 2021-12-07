@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main,menu)
         return super.onCreateOptionsMenu(menu)
     }
@@ -33,5 +33,4 @@ class MainActivity : AppCompatActivity() {
         }
         return result
     }
-
 }
